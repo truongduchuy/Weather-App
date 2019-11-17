@@ -10,6 +10,7 @@ const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '..//templates/partials')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
@@ -68,6 +69,6 @@ app.get('/*', (req, res)=>{
     res.render('404',{errorMessage: 'Page is not found'})
 })
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log('Server is on up port 3000.')
 }) 
